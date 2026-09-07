@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+
+# Dataset
+data/*.csv
+data/*.zip
+data/*.7z
+data/**/*.csv
+data/**/*.zip
+data/**/*.7z
+data/credit_risk.duckdb
+models/application_features.csv
+
+# Model artifacts
+models/*.pkl
+!models/credit_risk_lightgbm.pkl
+models/*.joblib
+models/*.pickle
+models/*.pt
+models/*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,6 @@
+LATE_PAYMENT_BAND,applicants,defaults,default_rate
+No late payments,139237,9370,6.73
+Low,80308,6482,8.07
+Moderate,50665,5225,10.31
+High,17401,2295,13.19
+Very High,1795,328,18.27

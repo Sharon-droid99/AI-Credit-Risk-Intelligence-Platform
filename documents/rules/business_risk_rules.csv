@@ -1,0 +1,7 @@
+rule_category,rule,business_action
+External Credit Score,"Applicants in the lowest observed EXT_SOURCE_1 score band have an observed default rate of 14.58%, compared with 3.04% in the highest band.",Applicants with weaker external credit scores should receive additional risk review.
+External Credit Score,"Applicants in the lowest observed EXT_SOURCE_2 score band have an observed default rate of 15.21%, compared with 3.59% in the highest band.",Applicants with weaker external credit scores should receive additional risk review.
+External Credit Score,"Applicants in the lowest observed EXT_SOURCE_3 score band have an observed default rate of 16.38%, compared with 3.38% in the highest band.",Applicants with weaker external credit scores should receive additional risk review.
+Employment History,"Applicants with shorter employment history show an observed default rate of 10.97%, compared with 4.18% for the longest employment band.",Limited employment history can be considered as an additional risk-review signal.
+Age,"The youngest observed age band has a default rate of 12.29%, while the oldest observed band has a default rate of 4.92%.",Age-related patterns should be treated as descriptive portfolio insights rather than automatic lending decisions.
+Repayment Behaviour,The observed default rate varies from 6.73% to 18.27% across late-payment-rate bands.,Higher observed late-payment behaviour should trigger additional repayment-history review.
