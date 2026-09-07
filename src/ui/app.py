@@ -17,6 +17,35 @@ from src.ml.predict import predict_risk
 from src.ml.explain import explain_applicant
 from src.talk_to_data.talk_to_data import TalkToData
 
+import zipfile
+
+@st.cache_resource
+def initialize_deployment():
+    # Run once at application startup to initialize required datasets and database for Streamlit Community Cloud.
+    csv_path = Path("models/application_features.csv")
+    zip_path = Path("models/application_features.zip")
+    
+    # Extract CSV if missing
+    if not csv_path.exists() and zip_path.exists():
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            for file_info in zip_ref.infolist():
+                if "application_features.csv" in file_info.filename:
+                    file_info.filename = "application_features.csv"
+                    zip_ref.extract(file_info, "models/")
+                    break
+                    
+    # Initialize DuckDB if missing
+    db_path = Path("data/credit_risk.duckdb")
+    if not db_path.exists() and csv_path.exists():
+        try:
+            from src.talk_to_data.query_runner import initialize_database
+            initialize_database()
+        except Exception as e:
+            print(f"Database initialization failed: {e}")
+
+# Run initialization
+initialize_deployment()
+
 # ==========================================
 # CONFIGURATION & STYLING
 # ==========================================

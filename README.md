@@ -391,6 +391,17 @@ MODEL_PATH=models
 5. Ensure `models/application_features.csv`, `models/credit_risk_lightgbm.pkl`, and `data/credit_risk.duckdb` are present.
 6. Run the application: `python -m streamlit run src/ui/app.py`.
 
+**Method 3: Streamlit Community Cloud (Deployment)**
+The application is pre-configured for direct deployment to Streamlit Community Cloud.
+1. Connect your GitHub repository to Streamlit Community Cloud.
+2. Set the **Main file path** to `src/ui/app.py`.
+3. In the **Advanced settings** (or Streamlit App Settings), configure your API keys as Secrets:
+   ```toml
+   LLM_API_KEY = "your_api_key_here"
+   LLM_MODEL = "your_model_here"
+   ```
+4. Deploy! The application will automatically extract the compressed feature dataset and initialize the DuckDB database on first startup.
+
 ---
 
 ## 21. Testing and Validation

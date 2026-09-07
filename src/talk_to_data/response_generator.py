@@ -29,8 +29,21 @@ class ResponseGenerator:
         self.api_key = os.getenv("LLM_API_KEY")
         self.model = os.getenv("LLM_MODEL")
 
+        # Try Streamlit secrets if missing
+        if not self.api_key or not self.model:
+            try:
+                import streamlit as st
+                if not self.api_key and "LLM_API_KEY" in st.secrets:
+                    self.api_key = st.secrets["LLM_API_KEY"]
+                if not self.model and "LLM_MODEL" in st.secrets:
+                    self.model = st.secrets["LLM_MODEL"]
+            except ImportError:
+                pass
+            except FileNotFoundError:
+                pass
+
         if not self.api_key:
-            raise ValueError("LLM_API_KEY is missing.")
+            raise ValueError("LLM_API_KEY is missing. Add it to .env or Streamlit secrets.")
 
         if not self.model:
             raise ValueError("LLM_MODEL is missing.")
