@@ -9,3 +9,4 @@ joblib==1.4.2
 python-dotenv==1.0.1
 openai==1.63.0
 matplotlib==3.10.0
+Pillow==11.3.0
