@@ -8,6 +8,16 @@ import os
 import contextlib
 import io
 
+# ==========================================
+# CONFIGURATION
+# ==========================================
+st.set_page_config(
+    page_title="Credit Risk Intelligence",
+    page_icon="🏦",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Add project root to path
 project_root = Path(__file__).resolve().parent.parent.parent
 if str(project_root) not in sys.path:
@@ -47,15 +57,8 @@ def initialize_deployment():
 initialize_deployment()
 
 # ==========================================
-# CONFIGURATION & STYLING
+# STYLING
 # ==========================================
-st.set_page_config(
-    page_title="Credit Risk Intelligence",
-    page_icon="🏦",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 # Custom CSS for a premium, professional aesthetic
 st.markdown("""
 <style>
